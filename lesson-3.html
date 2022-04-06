@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        // Задача 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+        function check() {
+            var n = 100;
+            var i = 2;
+            var Arr = [];
+            while (i <= n) {
+                if (i == 2 || i == 3 || i == 5 || i == 7) {
+                    Arr.push(" " + i);
+                    i++
+                    continue;
+                }
+                else if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0) {
+                    i++;
+                    continue;
+                }
+                Arr.push(" " + i++);
+            }
+            alert(Arr);
+        }
+    </script>
+
+
+    <script>
+        //1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+        //2. С этого урока начинаем работать с функционалом интернет - магазина.Предположим, есть сущность корзины.
+        //   Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.Товары в корзине 
+        //   хранятся в массиве.Задачи:
+        //  a) Организовать такой массив для хранения товаров в корзине;
+        //  b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+        var basket = [{ name: 'Очень полезная Штука', price: 3750, pieces: 2 }, { name: 'Штука', price: 1050, pieces: 15 }, { name: 'Полезная штука', price: 3050, pieces: 20 }, { name: 'Безполезная штука', price: 2050, pieces: 25 }];
+        function countBasketPrice() {
+            var sum = 0;
+            var number = 0;
+            var unit = 'Наиментвание: ';
+            for (var n of basket) {
+                sum += (n.price * n.pieces);
+                number += n.pieces;
+                tmp = n.pieces;
+                unit += '' + n.name + ' ' + tmp + 'шт. ';
+            }
+            var d = basket.length;
+            alert('количество позицый: ' + d + '. ' + unit + 'Всего едениц товара: ' + number + 'шт.' + ' Общая стоимость: ' + sum + 'руб.');
+            console.log('количество позицый: ' + d + '. ' + unit + 'Всего едениц товара: ' + number + 'шт.' + ' Общая стоимость: ' + sum + 'руб.');
+        }
+    </script>
+
+
+    <script>
+        // Задача 3. * Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.Выглядеть это должно так: for (…) {// здесь пусто}       
+        function Bodyarr() {
+            var arr = [];
+            for (var n = 0; n <= 9; arr.push(n++)) { }
+            alert(arr);
+            console.log(arr);
+        }
+    </script>
+    <button type="button" onclick="check()" class="button">Запуск скрипта Задача 1. </button>
+    <button type="button1" onclick="countBasketPrice()" class="button1">Запуск скрипта Задача 2. </button>
+    <button type="button2" onclick="Bodyarr()" class="button2">Запуск скрипта Задача 3. </button>
+</body>
+
+</html>
