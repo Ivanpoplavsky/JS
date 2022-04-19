@@ -43,24 +43,32 @@
         //2.1.В прошлом домашнем задании вы реализовали корзину на базе массивов.Какими объектами можно заменить их элементы ?
         //2.2.Реализуйте такие объекты.
         //2.3.Перенести функционал подсчета корзины на объектно - ориентированную базу.
-        var basket = [{ name: 'Очень полезная Штука', price: 3750, pieces: 2 }, { name: 'Штука', price: 1050, pieces: 15 }, { name: 'Полезная штука', price: 3050, pieces: 20 }, { name: 'Безполезная штука', price: 2050, pieces: 25 }];
-        function countBasketPrice() {
-            var sum = 0;
-            var number = 0;
-            var unit = 'Наиментвание: ';
-            for (var n of basket) {
-                sum += (n.price * n.pieces);
-                number += n.pieces;
-                tmp = n.pieces;
-                unit += '' + n.name + ' ' + tmp + 'шт. ';
+        var basket = [
+            { name: 'Очень полезная Штука', price: 3750, pieces: 2 },
+            { name: 'Штука', price: 1050, pieces: 15 },
+            { name: 'Полезная штука', price: 3050, pieces: 20 },
+            { name: 'Безполезная штука', price: 2050, pieces: 25 }
+        ];
+        var sum = 0;
+        var number = 0;
+        var unit = 'Наиментвание: ';
+        var res;
+        const counte = {
+            countBasketPrice: function () {
+                for (var n of basket) {
+                    sum += (n.price * n.pieces);
+                    // number += n.pieces;
+                    // tmp = n.pieces;
+                    // unit += '' + n.name + ' ' + tmp + 'шт. ';
+                }
+                //var d = basket.length;
+                return sum;
+                //return ('количество позицый: ' + d + '. ' + unit + 'Всего едениц товара: ' + number + 'шт.' + ' Общая   									стоимость: ' + sum + 'руб.')
             }
-            var d = basket.length;
-            alert('количество позицый: ' + d + '. ' + unit + 'Всего едениц товара: ' + number + 'шт.' + ' Общая стоимость: ' + sum + 'руб.');
-            console.log('количество позицый: ' + d + '. ' + unit + 'Всего едениц товара: ' + number + 'шт.' + ' Общая стоимость: ' + sum + 'руб.');
-        }
+        };
+        console.log("Стоимость всех товаров в корзине: " + counte.countBasketPrice() + " Руб.");
     </script>
 
-    <button type="button1" onclick="countBasketPrice()" class="button1">Запуск скрипта Задача 2. </button>
 
 </body>
 
